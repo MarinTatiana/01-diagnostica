@@ -1,8 +1,15 @@
 public class Ejercicio1 {
     public static void main(String[] args) {
-        // TODO: Declara aquí tus variables y asígnales valores
+        // Declaramos las variables y les asignamos valores
+        int edad = 17;
+        double nota = 8.5;
+        String nombre = "Tatiana";
+        boolean aprobado = true;
 
-        // TODO: Muestra los valores por consola
-        
+        // Mostramos los valores por consola
+        System.out.println(edad);
+        System.out.println(nota);
+        System.out.println(nombre);
+        System.out.println(aprobado);
     }
 }

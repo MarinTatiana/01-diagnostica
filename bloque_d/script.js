@@ -1,32 +1,30 @@
 /**
  * ============================================================================
- * 🎓 EVALUACIÓN DIAGNÓSTICA — BLOQUE D: JAVASCRIPT CON ERRORES
+ * 🎓 EVALUACIÓN DIAGNÓSTICA — BLOQUE D: JAVASCRIPT CORREGIDO
  * ============================================================================
  */
 
 function calcularPromedioNotas(a, b) {
-  // BUG JS: Concatenación en vez de suma numérica
-  return a + b / 2;
+  // Corrección de precedencia: sumar primero y dividir entre 2
+  return (a + b) / 2;
 }
 
 function procesarCalculo() {
   const input1 = document.querySelector("#nota1");
-  // BUG JS: Selector incorrecto
-  const input2 = document.querySelector("#nota_inexistente");
+  const input2 = document.querySelector("#nota2");
   const cajaResultado = document.querySelector("#resultado");
 
-  // BUG JS: no convierte a número
-  const val1 = input1.value;
-  const val2 = input2.value;
+  // Convertir los valores de texto a números flotantes
+  const val1 = parseFloat(input1.value) || 0;
+  const val2 = parseFloat(input2.value) || 0;
 
   const promedio = calcularPromedioNotas(val1, val2);
 
-  // BUG JS: error de sintaxis al asignar textContent
-  cajaResultado.textContnt = "Promedio: " + promedio;
+  // Corrección del error tipográfico en textContent
+  cajaResultado.textContent = "Promedio: " + promedio.toFixed(2);
 }
 
-// BUG JS: Selector que no encuentra el botón
-const boton = document.querySelector(".btn-calcular");
+const boton = document.querySelector("#btn-calcular");
 if (boton) {
   boton.addEventListener("click", procesarCalculo);
 }
